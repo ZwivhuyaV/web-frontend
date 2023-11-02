@@ -47,7 +47,7 @@ const Home = () => {
           className="input"
         />
         <br></br>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {error && <p className="error-message">{error}</p>}
         <button onClick={handleLogin} className="loginButton">
           Login
         </button>

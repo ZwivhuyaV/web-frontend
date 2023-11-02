@@ -60,3 +60,23 @@
 .signUpButton:hover {
   background-color: #2980b9;
 }
+
+.error-message {
+  color: red;
+  font-family: Arial, sans-serif;
+}
+
+.already-account {
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.login-link {
+  cursor: pointer;
+  color: #2980b9;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  background-color: #f7f7f7;
+}
+

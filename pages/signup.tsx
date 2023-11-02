@@ -10,30 +10,31 @@ const Home = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const router = useRouter();
+  const [error, setError] = useState('');
 
   const handleSignUp = () => {
     if (!firstName || !lastName || !contactNumber || !email || !physicalAddress || !password || !confirmPassword) {
-      alert('Please fill in all the fields');
+      setError('Please fill in all the fields');
       return;
     }
 
     if (password.length < 8) {
-      alert('Password should be at least 8 characters long');
+      setError('Password should be at least 8 characters long');
       return;
     }
 
     if (password !== confirmPassword) {
-      alert('Passwords do not match');
+      setError('Passwords do not match');
       return;
     }
 
-        router.push('/signup');
+    // Rest of the logic for handleSignUp function
+    router.push('/signup');
   };
 
   const handleLogin = () => {
     router.push('/');
   };
-
 
   return (
     <div className="container">
@@ -98,15 +99,13 @@ const Home = () => {
           className="input"
         />
         <br />
+        {error && <p className="error-message">{error}</p>}
         <button onClick={handleSignUp} className="signUpButton">
           Sign Up
         </button>
-        <p style={{ marginTop: '20px' }}>
+        <p className="already-account">
           Already have an account?{' '}
-          <span
-            style={{ textDecoration: 'underline', cursor: 'pointer', color: 'blue' }}
-            onClick={handleLogin}
-          >
+          <span className="login-link" onClick={handleLogin}>
             Login
           </span>
         </p>
