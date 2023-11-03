@@ -14,7 +14,7 @@ const Home = () => {
 
   const handleSignUp = () => {
     if (!firstName || !lastName || !contactNumber || !email || !physicalAddress || !password || !confirmPassword) {
-      setError('Please fill in all the fields');
+      setError('Please fill in the fields');
       return;
     }
 
